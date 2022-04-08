@@ -74,4 +74,4 @@ Distribué sous la License MIT. Voir `LICENSE` for plus d'informations.
 <!-- CONTACT -->
 ## Contact
 
-Yves Ininahazwe - yves.ininahazwe@talents-handicap.com
+Yves Ininahazwe - ininahazwe@yahoo.fr
