@@ -1,0 +1,65 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Récapitulatif de votre panier{% endblock %}
+
+{% block body %}
+<section>
+    <div class="container">
+        {{ form_start(checkout) }}
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <h4>Votre adresse de livraison</h4>
+                        <div>
+
+                        </div>
+
+                    </div>
+                    <div>
+                        <h4>Informations supplémentaires</h4>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <div><h4>Votre commande</h4></div>
+                    </div>
+                    <div class="table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Produit</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in cart.products %}
+                                    <tr>
+                                        <td>{{ item.product.title }} <span>x {{ item.quantity }}</span></td>
+                                        <td>{{ item.product.price/100 }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>sousTotal HT</th>
+                                    <th>{{ cart.data.subTotalHT }}</th>
+                                </tr>
+                                <tr>
+                                    <th>Taxe</th>
+                                    <th>{{ cart.data.taxe }}</th>
+                                </tr>
+                                <tr>
+                                    <th>Total</th>
+                                    <th>{{ cart.data.subTotalTTC }}</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+{% endblock %}

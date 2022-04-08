@@ -1,0 +1,40 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Mes commandes</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix total</th>
+                    <th>Date</th>
+                    <th>Référence</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for commande in app.user.transactions %}
+                <tr>
+                    <td>{{ commande.cartDetails|join }}</td>
+                    <td>{{ commande.quantity }}</td>
+                    <td>{{ commande.subTotalTTC/100 }} €</td>
+                    <td>{{ commande.createdAt|date }}</td>
+                    <td>{{ commande.reference }}</td>
+                    <td>
+                        <a href="">Annulation</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

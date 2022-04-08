@@ -1,0 +1,21 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.title }}</h5>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">{{ product.price/100 }} €</small>
+                    </div>
+                </div>
+
+    </div>
+</div>
+{% endblock %}
